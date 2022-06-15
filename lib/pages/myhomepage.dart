@@ -52,6 +52,8 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
           fruitList.add(value[i]);
         }
       });
+
+      fruitList = fruitList.reversed.toList();
     });
   }
 
@@ -76,8 +78,8 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
               children: [
                 Center(
                   child: SizedBox(
-                    height: MediaQuery.of(context).size.height / 2,
-                    width: MediaQuery.of(context).size.width / 2,
+                    height: MediaQuery.of(context).size.height * .75,
+                    width: MediaQuery.of(context).size.width * .75,
                     child: Card(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -148,7 +150,6 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
               ],
             )
           : GridView.count(
-              reverse: true,
               shrinkWrap: true,
               crossAxisCount: 2,
               children: List.generate(
