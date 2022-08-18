@@ -9,9 +9,7 @@ bool? isLight;
 final themeProvider = StateProvider((_) => isLight ?? true);
 void main() {
   if (kIsWeb) {
-    runApp(const ProviderScope(
-        child:
-            Center(child: SizedBox(width: 400, height: 800, child: MyApp()))));
+    runApp(const ProviderScope(child: Center(child: SizedBox(width: 400, height: 800, child: MyApp()))));
   } else {
     runApp(const ProviderScope(child: MyApp()));
   }
@@ -45,8 +43,7 @@ class MyAppState extends ConsumerState<MyApp> {
               cardColor: Colors.grey[200],
               scaffoldBackgroundColor: Colors.indigo[100],
               brightness: Brightness.light,
-              colorScheme: ColorScheme.fromSwatch()
-                  .copyWith(primary: Colors.indigo[500]),
+              colorScheme: ColorScheme.fromSwatch().copyWith(primary: Colors.indigo[500]),
             )
           : ThemeData.dark(),
       home: const MyHomePage(),

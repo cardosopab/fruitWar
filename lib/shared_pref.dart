@@ -29,10 +29,10 @@ Future<void> setthemeProvided(value) async {
   await prefs.setBool('themeProvided', value);
 }
 
-Future<void> setAd(value) async {
-  final SharedPreferences prefs = await _prefs;
-  await prefs.setBool('isAd', value);
-}
+// Future<void> setAd(value) async {
+//   final SharedPreferences prefs = await _prefs;
+//   await prefs.setBool('isAd', value);
+// }
 
 Future<bool> initSharedPrefs() async {
   prefs = await _prefs;

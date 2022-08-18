@@ -18,7 +18,7 @@ String? fruit;
 
 extension StringExtension on String {
   String capitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
   }
 }
 
@@ -27,14 +27,7 @@ String capitalizeTrim(word) {
   list.split('');
   var index = list.indexOf('.');
 
-  list = list
-      .substring(index += 1)
-      .split("")
-      .reversed
-      .join()
-      .toString()
-      .capitalize()
-      .replaceAll("_", " ");
+  list = list.substring(index += 1).split("").reversed.join().toString().capitalize().replaceAll("_", " ");
 
   return list;
 }
@@ -67,9 +60,7 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
             ref.read(themeProvider.notifier).state = !themeProvided;
             setthemeProvided(!themeProvided);
           }),
-          icon: themeProvided
-              ? const Icon(Icons.dark_mode_outlined)
-              : const Icon(Icons.light_mode_outlined),
+          icon: themeProvided ? const Icon(Icons.dark_mode_outlined) : const Icon(Icons.light_mode_outlined),
         )
       ]),
       body: isAd
@@ -93,18 +84,13 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
                                     text: "FRUITWAR! ",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: themeProvided
-                                          ? Colors.teal
-                                          : const Color(0xff50E3C2),
+                                      color: themeProvided ? Colors.teal : const Color(0xff50E3C2),
                                     ),
                                   ),
                                   TextSpan(
-                                    text:
-                                        "High-Scores get discounts, and vouchers, may the odds be ever in your favor!",
+                                    text: "High-Scores get discounts, and vouchers, may the odds be ever in your favor!",
                                     style: TextStyle(
-                                      color: themeProvided
-                                          ? Colors.black
-                                          : Colors.white,
+                                      color: themeProvided ? Colors.black : Colors.white,
                                     ),
                                   ),
                                 ],
@@ -123,9 +109,7 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
                                   TextSpan(
                                       text: "Press Play! ",
                                       style: TextStyle(
-                                        color: themeProvided
-                                            ? Colors.black
-                                            : Colors.white,
+                                        color: themeProvided ? Colors.black : Colors.white,
                                       )),
                                   const WidgetSpan(
                                     child: Icon(
@@ -138,8 +122,7 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
                               ),
                             ),
                           ),
-                          Lottie.network(
-                              'https://assets10.lottiefiles.com/temporary_files/EGBZKv.json'),
+                          Lottie.network('https://assets10.lottiefiles.com/temporary_files/EGBZKv.json'),
                           // Lottie.asset("assets/reward.json",
                           //     width: 300, height: 300),
                         ],
@@ -158,8 +141,7 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
                     onTap: () {
-                      ref.read(selectionProvider.notifier).state =
-                          fruitList[index];
+                      ref.read(selectionProvider.notifier).state = fruitList[index];
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -168,8 +150,7 @@ class MyHomePageState extends ConsumerState<MyHomePage> {
                       );
                     },
                     child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50)),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
